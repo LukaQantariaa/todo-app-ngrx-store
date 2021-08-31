@@ -1,0 +1,29 @@
+.todos-wrapper {
+    width: fit-content;
+    height: fit-content;
+    max-height: 500px;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid grey;
+    .todo-item {
+        width: 120px;
+        height: 35px;
+        font-size: 18px;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        line-height: 1.1;
+        text-align: center;
+        border: 1px solid grey;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

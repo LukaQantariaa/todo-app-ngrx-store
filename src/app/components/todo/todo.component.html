@@ -1,0 +1,5 @@
+<div *ngIf="todos" class="todos-wrapper">
+    <div *ngFor="let todo of todos; let i = index" class="todo-item">
+        {{todo.title}}
+    </div>
+</div>
