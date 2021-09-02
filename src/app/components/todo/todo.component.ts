@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { select, Store } from "@ngrx/store";
-import { Observable } from "rxjs";
+import { TodoRemove } from "src/app/actions/todo.actions";
 import { Todo } from "src/app/models/todo";
 
 @Component({
@@ -23,6 +23,10 @@ export class TodoComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    public removeTodo(index: number): void {
+        this.store.dispatch(new TodoRemove(index));
     }
     
 }

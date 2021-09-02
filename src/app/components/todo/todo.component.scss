@@ -1,29 +1,67 @@
-.todos-wrapper {
-    width: fit-content;
+:host {
+    width: 100%;
     height: fit-content;
-    max-height: 500px;
-    overflow-y: hidden;
+}
+
+.todos-wrapper {
+    width: 100%;
+    height: 350px;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 10px;
     margin-top: 15px;
     border: 1px solid grey;
-    .todo-item {
-        width: 120px;
-        height: 35px;
-        font-size: 18px;
-        padding: 5px;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        line-height: 1.1;
-        text-align: center;
-        border: 1px solid grey;
-        &:not(:last-child) {
-            margin-bottom: 10px;
+    position: relative;
+    .todo-list {
+        width: 100%;
+        min-height: 100%;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #0e1117;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #c8d1d9;
+        }
+        .todo-item {
+            overflow: hidden;
+            min-width: 120px;
+            max-width: 280px;
+            width: fit-content;
+            min-height: 35px;
+            max-height: 100px;
+            height: fit-content;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            line-height: 1.1;
+            border: 1px solid grey;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            .todo-title {
+                font-size: 18px;
+                text-align: center;
+            }
+            .todo-delete {
+                padding: 7px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                color: white;
+                background-color: #ff1644;
+                line-height: 1;
+                margin-left: 15px;
+                transition-duration: .2s;
+                &:hover {
+                    transform: scale(.9);
+                }
+            }
         }
     }
 }

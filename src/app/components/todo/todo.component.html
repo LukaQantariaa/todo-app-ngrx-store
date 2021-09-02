@@ -1,5 +1,8 @@
 <div *ngIf="todos" class="todos-wrapper">
-    <div *ngFor="let todo of todos; let i = index" class="todo-item">
-        {{todo.title}}
+    <div class="todo-list">
+        <div *ngFor="let todo of todos; let i = index" class="todo-item">
+            <div class="todo-title"> {{todo.title}} </div>
+            <div class="todo-delete" (click)="removeTodo(i)"> X </div>
+        </div>
     </div>
 </div>
