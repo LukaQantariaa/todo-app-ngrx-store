@@ -6,3 +6,9 @@
   <component-add-todo></component-add-todo>
   <component-todo></component-todo>
 </div>
+
+<div *ngIf="showPopup && popupConfig.show" class="popup-wrapper">
+  <shared-popup [config]="popupConfig" (onSave)="onPopupSave($event)" (onClose)="onPopupClose()"></shared-popup>
+</div>
+
+<div *ngIf="showPopup" class="background-blur"></div>

@@ -17,6 +17,9 @@ export function TodoReducer(state = initialState, action: ActionParent): Todo[] 
             const arr = [...state];
             [...arr.splice(action.payload, 1)]
             return arr;
+        case TodoActionTypes.Edit:
+            const editTodo = state[action.payload.index];
+            return [...state.map((todo) => editTodo === todo ? {...todo, title: action.payload.title} : todo)]
         default: return state;
     }
 }
